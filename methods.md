@@ -74,6 +74,9 @@ export async function handleRemoveTodo(todo){
 {% method %}
 ## createDispatcher {#createDispatcher}
 
+`RxStore` provide `createDispatcher` method **to avoid repetitive code**.
+
+
 ```js
   createDispatcher(reducer) {
     return (...args) => this.dispatch(reducer, ...args);
@@ -81,8 +84,6 @@ export async function handleRemoveTodo(todo){
 ```
 
 {% common %}
-
-`RxStore` provide `createDispatcher` method **to avoid repetitive code**.
 
 Define `reducers` in a dedicated file.
 
