@@ -134,7 +134,8 @@ onClick={() => handleAddTodo(todo)}
 ```
 
 {% common %}
-Whatever language you are using, the result will be the same.
+
+Define `reducers` in a dedicated file.
 
 _todo.reducers.js_
 ```js
