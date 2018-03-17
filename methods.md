@@ -9,7 +9,11 @@
 {% method %}
 ## constructor {#constructor}
 
-My first method exposes how to print a message in JavaScript and Go.
+### constructor({ ns:String, initialState:Object }):RxStore
+
+Everything start from here. Creating a new store.
+
+ ###constructor({ ns:String, initialState:Object }):RxStore
 
 {% common %}
 ###Example
@@ -24,20 +28,7 @@ const initialState = {
 
 const todoStore = new RxStore({ ns, initialState });
 
-todoStore.load();
-
-function handleHashChange(e) {
-  todoStore.dispatch((state) => ({
-    ...state,
-    hash: getHash(e.newURL),
-  }));
-}
-
-window.addEventListener('hashchange', handleHashChange, false);
-window.addEventListener('beforeunload', () => todoStore.save(), false);
-
 export default todoStore;
-
 ```
 
 {% endmethod %}
