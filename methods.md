@@ -11,10 +11,6 @@
 
 ### constructor({ ns:String, initialState:Object }):RxStore
 
-Everything start from here. Creating a new store.
-
- ###constructor({ ns:String, initialState:Object }):RxStore
-
 {% common %}
 ###Example
 
