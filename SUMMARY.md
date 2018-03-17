@@ -4,6 +4,13 @@
 
 * [Getting started](README.md)
 
+## Concepts
+
+* Reducer
+* ActionDispatcher
+* Store
+* Middlewares
+
 ## API
 
 * [Methodes](methods.md)

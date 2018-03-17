@@ -39,13 +39,13 @@ export default todoStore;
 ---
 
 {% method %}
-## dispatch {#dispatch}
+## async dispatch {#dispatch}
 
 ```js
   /**
    * Async Method
    * Dispatch an acion thought the store. This the unique manner to modify the store.
-   * @param {Function(state,...rest)} action The action to be dispatched, also callded reducer, that will modify the store.
+   * @param {Function(Object,...rest)} action The action to be dispatched, also callded reducer, that will modify the store.
    * Action got the state of the store as first arguments and 'rest' next.
    * @param {*} rest Rest of arguments passed to middlewares and to the action.
    */
