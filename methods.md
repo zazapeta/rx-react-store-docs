@@ -1,3 +1,5 @@
+#Methodes
+
 * [constructor](constructor.md)
 * [dispatch](dispatch.md)
 * [createDispatcher](createdispatcher.md)
