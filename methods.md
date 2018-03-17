@@ -16,29 +16,55 @@ Whatever language you are using, the result will be the same.
 
 {% endmethod %}
 
+---
 
-## My EEEENDLESSS method {#my-first}
+{% method %}
+## dispatch {#dispatch}
 
 My first method exposes how to print a message in JavaScript and Go.
 
-{% sample lang="doc" %}
-Here is how to print a message to `stdout` using JavaScript.
- LA DOC
-```js
-console.log('My first method ');
-```
-
-{% sample lang="example" %}
-Here is how to print a message to `stdout` using Go.
-
-```go
-fmt.Println("My first method")
-```
- L'example !!!
 {% common %}
 Whatever language you are using, the result will be the same.
 
-```bash
-$ My first method
-```
 {% endmethod %}
+
+---
+
+{% method %}
+## createDispatcher {#createDispatcher}
+
+My first method exposes how to print a message in JavaScript and Go.
+
+{% common %}
+Whatever language you are using, the result will be the same.
+
+{% endmethod %}
+
+---
+
+{% method %}
+## createDispatchers {#createDispatchers}
+
+My first method exposes how to print a message in JavaScript and Go.
+
+{% common %}
+Whatever language you are using, the result will be the same.
+
+{% endmethod %}
+
+---
+
+{% method %}
+## connect {#connect}
+
+My first method exposes how to print a message in JavaScript and Go.
+
+{% common %}
+Whatever language you are using, the result will be the same.
+
+{% endmethod %}
+
+
+
+
+
