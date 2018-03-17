@@ -7,7 +7,7 @@
 ## API
 
 * [Methodes](methods.md)
-  * [constructor](methods.md#my-first)
+  * [constructor](methods.md#constructor)
   * [dispatch](dispatch.md)
   * [createDispatcher](createdispatcher.md)
   * [createDispatchers](createdispatchers.md)
