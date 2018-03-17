@@ -41,7 +41,16 @@ export default todoStore;
 {% method %}
 ## dispatch {#dispatch}
 
-My first method exposes how to print a message in JavaScript and Go.
+```js
+  /**
+   * Async Method
+   * Dispatch an acion thought the store. This the unique manner to modify the store.
+   * @param {Function} action The action to be dispatched, also callded reducer, that will modify the store.
+   * Action got the state of the store as first arguments and 'rest' next.
+   * @param {*} rest Rest of arguments passed to middlewares and to the action.
+   */
+   async dispatch(action = (state) => state, ...rest)
+```
 
 {% common %}
 Whatever language you are using, the result will be the same.
