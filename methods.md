@@ -169,6 +169,8 @@ onClick={() => dispatchers.addTodo(todo)}
 `connect` is a High Order Component (react-redux.connect).
 It's create a component that listen for changes comming from the given store.
 
+>TIPS: To integrate RxStore with another view library, you may override `connect`
+
 
 {% common %}
 _todo.container.jsx_
