@@ -3,8 +3,8 @@
 ## Overview
 
 * [Getting started](README.md)
-* Why An Other Library ?
-* RxStore vs Redux
+* [Why An Other Library ?](why-an-other-library.md)
+* [RxStore vs Redux](rxstore-vs-redux.md)
 
 ## Concepts
 

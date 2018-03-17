@@ -74,11 +74,17 @@ export async function handleRemoveTodo(todo){
 {% method %}
 ## createDispatcher {#createDispatcher}
 
-My first method exposes how to print a message in JavaScript and Go.
+```js
+  createDispatcher(reducer) {
+    return (...args) => this.dispatch(reducer, ...args);
+  }
+```
 
 {% common %}
+
+`RxStore` provide `createDispatcher` method **to avoid repetitive code**.
+
 Define `reducers` in a dedicated file.
-`RxStore` provide `createDispatcher` method to avoid repetitive code.
 
 _todo.reducers.js_
 ```js
@@ -112,8 +118,16 @@ onClick={() => handleAddTodo(todo)}
 
 {% method %}
 ## createDispatchers {#createDispatchers}
-
-My first method exposes how to print a message in JavaScript and Go.
+```js
+  createDispatchers(reducers = {}) {
+    let dispatchers = {};
+    Object.keys(reducers).forEach(
+      (reducer) =>
+        (dispatchers[reducer] = this.createDispatcher(reducers[reducer])),
+    );
+    return dispatchers;
+  }
+```
 
 {% common %}
 Whatever language you are using, the result will be the same.
