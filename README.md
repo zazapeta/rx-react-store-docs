@@ -9,6 +9,7 @@ The basic implementation of rx-react-store is simple. However, to make the most 
 
 ## Data flow
 
+
 ## Basic usage
 
 * Store setup
