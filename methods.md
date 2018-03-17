@@ -16,6 +16,8 @@ Create a new RxStore instance.
 {% common %}
 ###Example
 
+_todo.store.js_
+
 ```js
 import RxStore from '@zazapeta/rx-react-store';
 
