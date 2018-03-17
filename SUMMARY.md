@@ -10,8 +10,8 @@
   * [constructor](constructor.md)
   * [dispatch](dispatch.md)
   * [createDispatcher](createdispatcher.md)
-  * createDispatchers
-  * connect
+  * [createDispatchers](createdispatchers.md)
+  * [connect](connect.md)
 * [middlewares lifecycle](middlewares-lifecycle.md)
 * [Attributes](attributes.md)
   * [\[get\] state](attributes/read-only-state.md)
