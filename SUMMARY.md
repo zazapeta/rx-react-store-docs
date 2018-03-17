@@ -24,10 +24,10 @@
 * [middlewares lifecycle](middlewares-lifecycle.md)
 * [Attributes](attributes.md)
   * [\[get\] state](attributes/read-only-state.md)
-  * \[get\] subject
-  * \[get\] namespace
+  * [\[get\] subject](attributes/get-subject.md)
+  * [\[get\] namespace](attributes/get-namespace.md)
 
 ## Examples
 
-* [TodoApp](examples/todoapp.md)
+* [TodoApp](https://github.com/zazapeta/rx-react-store/tree/master/rx-react-store-example-todo)
 
