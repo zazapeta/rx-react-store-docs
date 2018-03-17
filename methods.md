@@ -9,7 +9,9 @@
 {% method %}
 ## constructor {#constructor}
 
-### constructor({ ns:String, initialState:Object }):RxStore
+> constructor({ ns:String, initialState:Object }):RxStore
+
+Create a new RxStore instance.
 
 {% common %}
 ###Example
