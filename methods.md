@@ -155,10 +155,28 @@ onClick={() => dispatchers.addTodo(todo)}
 {% method %}
 ## connect {#connect}
 
-My first method exposes how to print a message in JavaScript and Go.
+`connect` is a High Order Component (react-redux.connect).
+It's create a component that listen for change coming from the given store.
+
 
 {% common %}
-Whatever language you are using, the result will be the same.
+_todo.container.jsx_
+```js
+import todoStore from './todo.store.js';
+
+function TodoContainer({todos}){
+...
+}
+
+function mapStateToProps({ todos }, props) {
+  // Work very well with 'reselect'.
+  let _todos = todos.sort((t1, t2) => t1.id < t2.id);
+
+  return { todos: _todos };
+}
+
+export default todoStore.connect(mapStateToProps)(TodoContainer);
+```
 
 {% endmethod %}
 
