@@ -12,7 +12,33 @@
 My first method exposes how to print a message in JavaScript and Go.
 
 {% common %}
-Whatever language you are using, the result will be the same.
+###Example
+
+```js
+import RxStore from '@zazapeta/rx-react-store';
+
+const ns = 'Todo';
+const initialState = {
+  todos: []
+};
+
+const todoStore = new RxStore({ ns, initialState });
+
+todoStore.load();
+
+function handleHashChange(e) {
+  todoStore.dispatch((state) => ({
+    ...state,
+    hash: getHash(e.newURL),
+  }));
+}
+
+window.addEventListener('hashchange', handleHashChange, false);
+window.addEventListener('beforeunload', () => todoStore.save(), false);
+
+export default todoStore;
+
+```
 
 {% endmethod %}
 
