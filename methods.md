@@ -3,9 +3,18 @@
 {% method %}
 ## constructor {#constructor}
 
-> constructor({ ns:String, initialState:Object }):RxStore
 
-Create a new RxStore instance.
+```js
+  /**
+   * Create an RxStore instance
+   * @param {Object} opts
+   * @param {String} opts.ns The namespace of the store. Debuggin purpose. Default: 'rxStore'
+   * @param {Object} opts.initialState Initial state of the store. Default: {}
+   * 
+   * @returns {RxStore} A new RxStore instance
+   */
+   constructor({ ns = 'rxStore', initialState = {} } = {})
+ ```
 
 {% common %}
 ###Example
