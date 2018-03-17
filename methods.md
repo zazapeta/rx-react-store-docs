@@ -156,7 +156,7 @@ onClick={() => dispatchers.addTodo(todo)}
 ## connect {#connect}
 
 `connect` is a High Order Component (react-redux.connect).
-It's create a component that listen for change coming from the given store.
+It's create a component that listen for changes comming from the given store.
 
 
 {% common %}
