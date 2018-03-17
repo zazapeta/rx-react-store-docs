@@ -7,9 +7,7 @@ The basic implementation of rx-react-store is simple. However, to make the most 
 * Flux
 * RxJs
 
-
-
-## Data flow 
+## Data flow
 
 ## Basic usage
 
@@ -21,9 +19,7 @@ The basic implementation of rx-react-store is simple. However, to make the most 
 * Actions
 * Dispatchers
 
-
-
-## Peer Dependencies 
+## Peer Dependencies
 
 ## Installation
 

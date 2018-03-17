@@ -6,17 +6,19 @@
 
 ## API
 
-* [constructor](methods.md)
-* [dispatch](dispatch.md)
-* createDispatcher
-* createDispatchers
-* connect
-* middlewares lifecycle
-* get namsespace
-* [get subject](get-subject.md)
-* get state
+* [Methodes](methods.md)
+  * [constructor](constructor.md)
+  * [dispatch](dispatch.md)
+  * [createDispatcher](createdispatcher.md)
+  * createDispatchers
+  * connect
+* [middlewares lifecycle](middlewares-lifecycle.md)
+* [Attributes](attributes.md)
+  * [\[get\] state](attributes/read-only-state.md)
+  * \[get\] subject
+  * \[get\] namespace
 
 ## Examples
 
-* TodoApp
+* [TodoApp](examples/todoapp.md)
 
