@@ -52,7 +52,10 @@ export default todoStore;
    async dispatch(action = (state) => state, ...rest)
 ```
 {% common %}
-Whatever language you are using, the result will be the same.
+
+Define dispatchers in a dedicated file.
+Just import `todoStore` and have access to the `dispatch` method to update all connected component.
+
 _todo.dispatchers.js_
 ```js
 import todoStore from './todo.store.js';
@@ -74,13 +77,30 @@ export async function handleRemoveTodo(todo){
 My first method exposes how to print a message in JavaScript and Go.
 
 {% common %}
-Whatever language you are using, the result will be the same.
+Define `reducers` in a dedicated file.
+`RxStore` provide `createDispatcher` method to avoid repetitive code.
 
+_todo.reducers.js_
+```js
+export function addTodo(state, todo){
+  return {
+    ...state,
+    todos: state.todos.concat(todo)
+  };
+}
+```
+
+_todo.container.jsx_
 ```js
 import todoStore from './todo.store.js';
 import { addTodo } from './todo.reducers.js';
 let handleAddTodo = todoStore.createDispatcher(addTodo);
 
+/* Equivalent to :
+function handleTodo(todo){
+  return todoStore.dispatch(addTodo, todo);
+}
+*/
 ...
 
 onClick={() => handleAddTodo(todo)}
@@ -98,6 +118,7 @@ My first method exposes how to print a message in JavaScript and Go.
 {% common %}
 Whatever language you are using, the result will be the same.
 
+_todo.container.jsx_
 ```js
 import todoStore from './todo.store.js';
 import * as reducers from './todo.reducers.js';
