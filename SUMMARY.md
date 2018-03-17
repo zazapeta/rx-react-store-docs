@@ -2,11 +2,21 @@
 
 ## Overview
 
-* [My Awesome API](README.md)
-* Getting started
-* [API](api.md)
+* [Getting started](README.md)
 
-## Methods
+## API
 
-* [Defining Methods](methods.md)
+* [constructor](methods.md)
+* [dispatch](dispatch.md)
+* createDispatcher
+* createDispatchers
+* connect
+* middlewares lifecycle
+* get namsespace
+* [get subject](get-subject.md)
+* get state
+
+## Examples
+
+* TodoApp
 
