@@ -136,6 +136,16 @@ onClick={() => handleAddTodo(todo)}
 {% common %}
 Whatever language you are using, the result will be the same.
 
+_todo.reducers.js_
+```js
+export function addTodo(state, todo){
+  return {
+    ...state,
+    todos: state.todos.concat(todo)
+  };
+}
+```
+
 _todo.container.jsx_
 ```js
 import todoStore from './todo.store.js';
