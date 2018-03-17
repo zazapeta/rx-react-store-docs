@@ -74,7 +74,7 @@ export async function handleRemoveTodo(todo){
 {% method %}
 ## createDispatcher {#createDispatcher}
 
-`RxStore` provide `createDispatcher` method **to avoid repetitive code**.
+>`RxStore` provide `createDispatcher` method **to avoid repetitive code**.
 
 
 ```js
@@ -119,6 +119,9 @@ onClick={() => handleAddTodo(todo)}
 
 {% method %}
 ## createDispatchers {#createDispatchers}
+
+>`RxStore` provide `createDispatchers` method **to avoid repetitive code**.
+
 ```js
   createDispatchers(reducers = {}) {
     let dispatchers = {};
