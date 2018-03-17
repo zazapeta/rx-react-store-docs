@@ -3,11 +3,13 @@
 ## Overview
 
 * [Getting started](README.md)
+* Why An Other Library ?
+* RxStore vs Redux
 
 ## Concepts
 
-* Reducer
-* ActionDispatcher
+* [Reducer](concepts/reducer.md)
+* [Dispatchers](concepts/actiondispatcher.md)
 * Store
 * Middlewares
 

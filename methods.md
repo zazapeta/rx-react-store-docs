@@ -39,7 +39,7 @@ export default todoStore;
 ---
 
 {% method %}
-## async dispatch {#dispatch}
+## dispatch {#dispatch}
 
 ```js
   /**
@@ -51,10 +51,19 @@ export default todoStore;
    */
    async dispatch(action = (state) => state, ...rest)
 ```
-
 {% common %}
 Whatever language you are using, the result will be the same.
+_todo.dispatchers.js_
+```js
+import todoStore from './todo.store.js';
 
+export async function handleRemoveTodo(todo){
+  return todoStore.dispatch((state) => ({
+    ...state, 
+    todos: state.todos.filter((t) => t.id !== todo.id)
+  }));
+}
+```
 {% endmethod %}
 
 ---
@@ -67,6 +76,16 @@ My first method exposes how to print a message in JavaScript and Go.
 {% common %}
 Whatever language you are using, the result will be the same.
 
+```js
+import todoStore from './todo.store.js';
+import { addTodo } from './todo.reducers.js';
+let handleAddTodo = todoStore.createDispatcher(addTodo);
+
+...
+
+onClick={() => handleAddTodo(todo)}
+```
+
 {% endmethod %}
 
 ---
@@ -78,6 +97,17 @@ My first method exposes how to print a message in JavaScript and Go.
 
 {% common %}
 Whatever language you are using, the result will be the same.
+
+```js
+import todoStore from './todo.store.js';
+import * as reducers from './todo.reducers.js';
+let dispatchers = todoStore.createDispatchers(reducers);
+
+...
+
+onClick={() => dispatchers.addTodo(todo)}
+
+```
 
 {% endmethod %}
 
