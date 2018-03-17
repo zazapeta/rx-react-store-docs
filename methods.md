@@ -1,10 +1,4 @@
-#Methodes index
-
-* [constructor](constructor.md)
-* [dispatch](dispatch.md)
-* [createDispatcher](createdispatcher.md)
-* [createDispatchers](createdispatchers.md)
-* [connect](connect.md)
+#Methodes
 
 {% method %}
 ## constructor {#constructor}
