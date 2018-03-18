@@ -1,7 +1,7 @@
 #Methodes
 
 {% method %}
-## constructor {#constructor}
+## constructor({ns:String, intialState:Object}) {#constructor}
 
 
 ```js
@@ -39,17 +39,17 @@ export default todoStore;
 ---
 
 {% method %}
-## dispatch {#dispatch}
+## _async_ dispatch(reducer:Function, ...rest) {#dispatch}
 
 ```js
   /**
    * Async Method
-   * Dispatch an acion thought the store. This the unique manner to modify the store.
-   * @param {Function(Object,...rest)} action The action to be dispatched, also callded reducer, that will modify the store.
+   * Dispatch a reducer thought the store. This the unique manner to modify the store.
+   * @param {Function(Object,...rest)} action The reducer to be dispatched, that will modify the store.
    * Action got the state of the store as first arguments and 'rest' next.
    * @param {*} rest Rest of arguments passed to middlewares and to the action.
    */
-   async dispatch(action = (state) => state, ...rest)
+   async dispatch(reducer = (state) => state, ...rest)
 ```
 {% common %}
 
@@ -72,7 +72,7 @@ export async function handleRemoveTodo(todo){
 ---
 
 {% method %}
-## createDispatcher {#createDispatcher}
+## createDispatcher(reducer:Function):Function {#createDispatcher}
 
 `RxStore` provide `createDispatcher` method **to avoid repetitive code**.
 
@@ -118,7 +118,7 @@ onClick={() => handleAddTodo(todo)}
 ---
 
 {% method %}
-## createDispatchers {#createDispatchers}
+## createDispatchers(reducersMap:Object<key:String, reducer:Function>):dispatchersMap:Object<key:String, dispatcher:Function> {#createDispatchers}
 
 `RxStore` provide `createDispatchers` method **to avoid repetitive code**.
 
