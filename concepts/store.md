@@ -29,7 +29,7 @@ _App.container.jsx_
 import appStore from './app.store.js';
 
 function setTitle(state, title){
-  retun {...state, title}
+  return {...state, title}
 }
 
 function App({title}){
