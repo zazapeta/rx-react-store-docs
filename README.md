@@ -32,7 +32,7 @@ The basic implementation of rx-react-store is simple. However, to make the most 
  #### 3. The store save the new state given by `reducer`
  Every connected registered with `store.connect()(component)` will now be rerender.
  
- Note: Because `component.setState` is async, the `store.dispatch` is also async by nature.
+ >Because `component.setState` is async, the `store.dispatch` is also async by nature.
 
 ## Basic usage
 
