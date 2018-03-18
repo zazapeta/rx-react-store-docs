@@ -117,7 +117,6 @@ import todoStore from './todo.store.js';
 import * as todoReducers from './todo.reducers.js';
 
 const { addTodo: handleAddTodo } = todoStore.createDispatchers(todoReducers);
-// may be it will be useful to create a todo.dispatchers.js to avoid repetition.
 
 export default function AddInput(){
  return <input type='text' onBlur={(e) => handleAddTodo(e.target.value)};
