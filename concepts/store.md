@@ -40,6 +40,6 @@ function App({title}){
   );
 }
 
-export 
+export default appStore.connect()(App);
 
 ```
