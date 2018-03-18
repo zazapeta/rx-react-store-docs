@@ -7,7 +7,7 @@ The basic implementation of rx-react-store is simple. However, to make the most 
 * Flux
 * RxJs
 
-## Installation
+## Installation {#install}
 
 ```batch
 npm i --save @zazapeta/rx-react-store

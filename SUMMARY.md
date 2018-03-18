@@ -3,7 +3,8 @@
 ## Overview
 
 * [Getting started](README.md)
-  * [Data flow](REAMDE.md#data-flow)
+  * [Data flow](README.md#data-flow)
+  * [Installation](README.ms#install)
 * [Why An Other Library ?](why-an-other-library.md)
 
 ## Concepts
