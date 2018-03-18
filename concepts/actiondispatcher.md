@@ -10,7 +10,7 @@ Dispatching will trigger [middlewares](middlewares-lifecycle.md) and will rerend
 
 {% method %}
 
-## _async_ `dispatch(reducer)`
+_async_ ##  `dispatch(reducer)`
 
 Using `dispatch` method directly. Be aware with this method. It can generate a lot of boilerplate code. To reduce it, see [`createDispatchers`](methods.md#createDispatchers)
 
