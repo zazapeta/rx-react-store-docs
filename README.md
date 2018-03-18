@@ -88,15 +88,15 @@ function App({title}){
 }
 
 export default appStore.connect()(App);
-```js
-
+```
 
 _AnOther.container.jsx_
 
+
 ```js
 
 
 
 
-import appStore from '../App/app.store.js';
+```js
 
