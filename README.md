@@ -13,7 +13,7 @@ The basic implementation of rx-react-store is simple. However, to make the most 
 npm i --save @zazapeta/rx-react-store
 ```
 
-## Data flow
+## Data flow {#data-flow}
 
  #### 1. You call `store.dispatch(reducer, ...rest)`
  A `reducer` is a ** pure function **. It only computes the next state. It should be completely predictable: calling it with the same inputs many times should produce the same outputs. It shouldn't perform any side effects like API calls or router transitions. These should happen before an action is dispatched.
