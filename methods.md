@@ -118,7 +118,7 @@ onClick={() => handleAddTodo(todo)}
 ---
 
 {% method %}
-## createDispatchers(reducersMap:Object<key:String, reducer:Function>):dispatchersMap:Object<key:String, dispatcher:Function> {#createDispatchers}
+## createDispatchers(reducersMap_:Object<key:String,reducer:Function>_)_:dispatchersMap:Object<key:String, dispatcher:Function>_ {#createDispatchers}
 
 `RxStore` provide `createDispatchers` method **to avoid repetitive code**.
 
@@ -164,7 +164,7 @@ onClick={() => dispatchers.addTodo(todo)}
 ---
 
 {% method %}
-## connect {#connect}
+## connect(mapStateToProps_:Function(state,props)->Object_)(BaseComponent_:Component_)_:Component_ {#connect}
 
 `connect` is a High Order Component (react-redux.connect).
 It's create a component that listen for changes comming from the given store.
