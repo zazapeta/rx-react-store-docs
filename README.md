@@ -105,4 +105,5 @@ export default function InputTitle(){
 }
 
 ```
-Each time the input will be blured, App.container.jsx will rerender with the new value of the `title input`. Throttle implemntation is up to you.
+
+Each time the input will be blurred, App.container.jsx will rerender with the new value of the `title input`. Throttle implemntation is up to you.
