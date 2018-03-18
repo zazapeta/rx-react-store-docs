@@ -91,4 +91,7 @@ export default appStore.connect()(App);
 
 _AnOther.container.jsx_
 ```js
+import appDispatchers from './app.dispatchers.js';
+
+
 ```
