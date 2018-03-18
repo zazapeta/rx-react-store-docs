@@ -72,7 +72,7 @@ export async function handleRemoveTodo(todo){
 ---
 
 {% method %}
-## createDispatcher(reducer:Function):Function {#createDispatcher}
+## createDispatcher(reducer:Function): Function {#createDispatcher}
 
 `RxStore` provide `createDispatcher` method **to avoid repetitive code**.
 
@@ -118,7 +118,7 @@ onClick={() => handleAddTodo(todo)}
 ---
 
 {% method %}
-## createDispatchers(reducersMap_:Object<key:String,reducer:Function>_)_:dispatchersMap:Object<key:String, dispatcher:Function>_ {#createDispatchers}
+## createDispatchers(reducersMap:Object{String,Function}):Object{String, Function} {#createDispatchers}
 
 `RxStore` provide `createDispatchers` method **to avoid repetitive code**.
 
@@ -164,7 +164,7 @@ onClick={() => dispatchers.addTodo(todo)}
 ---
 
 {% method %}
-## connect(mapStateToProps_:Function(state,props)->Object_)(BaseComponent_:Component_)_:Component_ {#connect}
+## connect(mapStateToProps:Function(state, props)->Object)(BaseComponent:Component):Component {#connect}
 
 `connect` is a High Order Component (react-redux.connect).
 It's create a component that listen for changes comming from the given store.
