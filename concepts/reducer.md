@@ -9,12 +9,14 @@ A **pure function ** is a function which:
  * Given the same input, will always return the same output.
  * Produces no side effects.
 
- [Eric Elliot](https://twitter.com/_ericelliott) describes (in this [article](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-pure-function-d1c076bec976)) very well  what are the payoff using pure function.
+[Eric Elliot](https://twitter.com/_ericelliott) describes (in this [article](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-pure-function-d1c076bec976)) very well  what are the payoff using pure function.
  
- In this example the classic switch case of [redux reducer](https://redux.js.org/basics/reducers#handling-more-actions) disapeared.
- There is no more combine Reducer.
+In this example the classic switch case of [redux reducer](https://redux.js.org/basics/reducers#handling-more-actions) disapeared.
+There is no more combine Reducer.
  
- With `RxStore` there is no more `switch case` because we dispatch direclty a reducer to affect the state.
+With `RxStore` there is no more `switch case` because we dispatch direclty a reducer to affect the state.
+ 
+`Reducers` are destined to be dispatched thought the `store.dispatch` method. To do so, we can create [Dispatchers](concepts/actiondispatcher.md).
 
 {% common %}
 ###Example
@@ -67,10 +69,6 @@ export const addTodo = (state, todo) => addItem(state, 'todos', todo);
 
 export cont removeItem = (state, todo) => removeItem(state, 'todos', todo, (todo) => todo.id);
 ```
-
-
-
-
 
 {% endmethod %}
 
