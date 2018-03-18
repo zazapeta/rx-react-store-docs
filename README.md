@@ -10,7 +10,8 @@ The basic implementation of rx-react-store is simple. However, to make the most 
 ## Data flow
 
  #### 1. You call `store.dispatch(reducer, ...rest)`
- A `reducer` is a ** pure function ** that, given a state, return a new new state.
+ A `reducer` is a ** pure function **. It only computes the next state. It should be completely predictable: calling it with the same inputs many times should produce the same outputs. It shouldn't perform any side effects like API calls or router transitions. These should happen before an action is dispatched.
+
  
  You can call store.dispatch(reducer, ...rest) from anywhere in your app, including components and XHR callbacks, or even at scheduled intervals.
  
@@ -19,10 +20,17 @@ The basic implementation of rx-react-store is simple. However, to make the most 
  The store will pass `n` arguments to the reducer: the first is the current state, rest of arguments are passing with `...rest`. For example : 
  
  ```js
- function setTitle(state, title){
-  return { ...state, title };
+ function setAppCfg(state, title, theme){
+  return { ...state, title, theme };
  }
+ 
+ /*
+  dipatch : store.dispatch(setTitle, 'My new title', 'dark')
+ */
  ```
+
+ #### 3. The store save the new state given by `reducer`
+ Every connected registered with `store.connect()(component) will now be rerender;
 
 ## Basic usage
 
