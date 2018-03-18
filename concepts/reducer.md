@@ -65,7 +65,6 @@ export function removeItem(state, list, item, id){
 import { addItem, removeItem } from './common.reducers.js';
 
 export const addTodo = (state, todo) => addItem(state, 'todos', todo);
-}
 
 export cont removeItem = (state, todo) => removeItem(state, 'todos', todo, (todo) => todo.id);
 ```
