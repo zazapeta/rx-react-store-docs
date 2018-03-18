@@ -6,14 +6,12 @@ There is 2 ways to `dispatch`:
  * Using the [`dispatch`](methods.md#dispatch) method direclty
  * Calling a dispatcher created by [`createDispatcher`](methods.md#createDispatcher) and [`createDispatchers`](methods.md#createDispatchers)
  
-Dispatching will trigger middlewares and will rerender all ** connected components** that are wrapped by the [`connect`](methods.md#connect) HOC of a same RxStore instance.
+Dispatching will trigger middlewares and will rerender all ** connected components** that are wrapped by the [`connect`](methods.md#connect) HOC of a same RxStore instance (think singleton).
 
 {% method %}
 
-Dispatcher are ** async functions ** that receive a [reducer](concepts/reducer.md) and, in addition some arguments that will be passed to the reducer.
-## Dispatching a reducer
+## `dispatch`
 
-To `dispatch` a reducer 
 {% common %}
 ###Example
 

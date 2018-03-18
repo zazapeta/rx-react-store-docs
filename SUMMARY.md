@@ -4,13 +4,12 @@
 
 * [Getting started](README.md)
 * [Why An Other Library ?](why-an-other-library.md)
-* [RxStore vs Redux](rxstore-vs-redux.md)
 
 ## Concepts
 
 * [Reducer](concepts/reducer.md)
 * [Dispatchers](concepts/actiondispatcher.md)
-* Store
+* [Store](concepts/store.md)
 * Middlewares
 
 ## API
