@@ -40,7 +40,7 @@ npm i --save @zazapeta/rx-react-store
  
  >Because `component.setState` is async, the `store.dispatch` is also async by nature.
 
-## Basic starting guide
+## Basic starting guide {#start}
 
 * Store setup : 
 _app.store.js_
