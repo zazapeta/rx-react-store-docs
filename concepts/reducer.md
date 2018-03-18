@@ -62,7 +62,7 @@ export function removeItem(state, list, item, id){
  and therefor
  
  ```js
- import { addItem, removeItem } from './common.reducers.js';
+import { addItem, removeItem } from './common.reducers.js';
 
 export const addTodo = (state, todo) => addItem(state, 'todos', todo);
 }
