@@ -42,7 +42,8 @@ npm i --save @zazapeta/rx-react-store
 
 ## Basic starting guide {#start}
 
-* Store setup : 
+**Store**
+
 _app.store.js_
 
 ```js
@@ -57,14 +58,18 @@ store.AfterGlobalParalel.set('InfoLogger', (state, reducer) =>
 
 export default store;
 ```
-* Reducers
+
+**Reducers**
+
 _app.reducers.js_
 ```js
 export function setStitle(state, title){
  return {...state, title };
 }
 ```
-* Dispatchers
+
+**Dispatchers**
+
 _app.dispatchers.js_
 ```js
 import appStore from './app.store.js';
@@ -73,7 +78,9 @@ import * as appReducers from './app.reducers.js';
 export default appStore.createDispatchers(appReducers);
 
 ```
-* Connected Component \(aka Container Component\)
+
+**Connected Component \(aka Container Component\)**
+
 _App.container.jsx_
 ```js
 import appStore from './app.store.js';
@@ -89,7 +96,7 @@ function App({title}){
 export default appStore.connect()(App);
 ```
 
-_AnOther.container.jsx_
+_AnOther.jsx_
 ```js
 import appDispatchers from './app.dispatchers.js';
 
