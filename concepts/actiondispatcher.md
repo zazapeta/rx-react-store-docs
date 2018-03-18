@@ -2,6 +2,7 @@
 
 
 Dispatcher are ** async functions ** that receive a [reducer](concepts/reducer.md) and, in addition some arguments that will be passed to the reducer. This the one way to modify the store.
+Like `react.setState` `dispatch` is async. Use `await` keyword to make things after a dispatch.
 There is 2 ways to `dispatch`:
  * Using the [`dispatch`](methods.md#dispatch) method direclty
  * Calling a dispatcher created by [`createDispatcher`](methods.md#createDispatcher) or [`createDispatchers`](methods.md#createDispatchers)
@@ -10,7 +11,7 @@ Dispatching will trigger [middlewares](middlewares-lifecycle.md) and will rerend
 
 {% method %}
 
-_async_ ##  `dispatch(reducer)`
+## _async_ `dispatch(reducer)`
 
 Using `dispatch` method directly. Be aware with this method. It can generate a lot of boilerplate code. To reduce it, see [`createDispatchers`](methods.md#createDispatchers)
 
