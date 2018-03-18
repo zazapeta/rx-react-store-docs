@@ -9,7 +9,7 @@ A **pure function ** is a function which:
  * Given the same input, will always return the same output.
  * Produces no side effects.
 
-[Eric Elliot](https://twitter.com/_ericelliott) describes (in this [article](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-pure-function-d1c076bec976)) very well what is the payoff using pure function.
+[Eric Elliot](https://twitter.com/_ericelliott) describes (in this [article](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-pure-function-d1c076bec976)) very well what is the payoff of pure functions.
  
 In this example the classic switch case of [redux reducer](https://redux.js.org/basics/reducers#handling-more-actions) disapeared.
 There is no more combine Reducer.
