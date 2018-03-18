@@ -77,7 +77,6 @@ export default appStore.createDispatchers(appReducers);
 _App.container.jsx_
 ```js
 import appStore from './app.store.js';
-import appDispatchers from './app.dispatchers.js';
 
 function App({title}){
  return (
