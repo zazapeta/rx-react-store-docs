@@ -93,5 +93,9 @@ _AnOther.container.jsx_
 ```js
 import appDispatchers from './app.dispatchers.js';
 
+export default function InputTitle(){
+ return <input type='text' onBlur={(e) => appDispatchers.setTitle(e.target.value)} />
+}
 
 ```
+Each time the input will be blured, App.container.jsx will rerender with the new value of the `title input`. Throttle implemntation is up to you.
