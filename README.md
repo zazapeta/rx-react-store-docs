@@ -7,6 +7,12 @@ The basic implementation of rx-react-store is simple. However, to make the most 
 * Flux
 * RxJs
 
+## Installation
+
+```batch
+npm i --save @zazapeta/rx-react-store
+```
+
 ## Data flow
 
  #### 1. You call `store.dispatch(reducer, ...rest)`
@@ -34,21 +40,63 @@ The basic implementation of rx-react-store is simple. However, to make the most 
  
  >Because `component.setState` is async, the `store.dispatch` is also async by nature.
 
-## Basic usage
+## Basic starting guide
 
-* Store setup
-* Middleware
-* Connected Component \(aka Container Component\)
+* Store setup : 
+_app.store.js_
+
+```js
+import RxStore from '@zazapeta/rx-react-store';
+
+let store = new RxStore();
+
+// setup middlewares
+store.AfterGlobalParalel.set('InfoLogger', (state, reducer) =>
+  console.info(`[${reducer.name}] STATE:`, state),
+);
+
+export default store;
+```
 * Reducers
+_app.reducers.js_
+```js
+export function setStitle(state, title){
+ return {...state, title };
+}
+```
 * Dispatchers
+_app.dispatchers.js_
+```js
+import appStore from './app.store.js';
+import * as appReducers from './app.reducers.js';
 
-## Peer Dependencies
-
-## Installation
+export default appStore.createDispatchers(appReducers);
 
 ```
-npm i --save @zazapeta/rx-react-store
-```
+* Connected Component \(aka Container Component\)
+_App.container.jsx_
+```js
+import appStore from './app.store.js';
+import appDispatchers from './app.dispatchers.js';
+
+function App({title}){
+ return (
+  <div>
+   <h1>{title}</h1>
+  </div>
+ );
+}
+
+export default appStore.connect()(App);
+```js
 
 
+_AnOther.container.jsx_
+
+```js
+
+
+
+
+import appStore from '../App/app.store.js';
 
