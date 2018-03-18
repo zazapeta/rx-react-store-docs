@@ -10,7 +10,10 @@ Dispatching will trigger middlewares and will rerender all ** connected componen
 
 {% method %}
 
-## `dispatch`
+## `dispatch(reducer)`
+
+Using `dispatch` method directly. Be aware with this method. It can generate a lot of boilerplate code. To reduce it, see [`createDispatchers`](methods.md#createDispatchers)
+
 
 {% common %}
 ###Example
@@ -18,51 +21,114 @@ Dispatching will trigger middlewares and will rerender all ** connected componen
 _todo.reducers.js_
 
 ```js
+import {createTodo} from './todo.utils.js';
+
 export function addTodo(state, todo){
  return {
   ...state, // We don't mutate the state. We create a copy.
-  todos: state.todos.concat(todo)
+  todos: state.todos.concat(createTodo(todo))
  }
 }
 
-export function removeTodo(state, todo){
- return {
-  ...state, // again. 
-  todos: state.todos.filter((t) => t.id !== todo.id))
- }
-}
 ```
 
-but we can imagine a more generic/functional way to split reducers like
-
-_common.reducers.js_
+_todo.addInput.container.jsx_
 ```js
-export function addItem(state, list, item){
- return {
-  ...state,
-  [list]: state[list].concat(item)
- }
+import { addTodo } from './todo.reducers.js';
+import todoStore from './todo.store.js';
+
+export default function AddInput(){
+ return <input type='text' onBlur={(e) => todoStore.dispatch(addTodo, e.target.value)};
 }
-
-export function removeItem(state, list, item, id){
- return {
-  ...state,
-  [list]: state[list].filter((i) => id(i) !== id(item))
- }
-}
-
-```
-
- and rewrigth 
- _todo.reducers.js_
- 
- ```js
-import { addItem, removeItem } from './common.reducers.js';
-
-export const addTodo = (state, todo) => addItem(state, 'todos', todo);
-
-export const removeItem = (state, todo) => removeItem(state, 'todos', todo, (todo) => todo.id);
 ```
 
 {% endmethod %}
+
+{% method %}
+
+## `createDispatcher(reducer, ...rest)`
+
+`createDispatcher` is more like a built-in helper to reduce repetitive code around `dispatch`;
+
+
+{% common %}
+###Example
+_todo.reducers.js_
+
+```js
+import {createTodo} from './todo.utils.js';
+
+export function addTodo(state, todo){
+ return {
+  ...state, // We don't mutate the state. We create a copy.
+  todos: state.todos.concat(createTodo(todo))
+ }
+}
+
+```
+
+_todo.dispatchers.js_
+```js
+import { addTodo } from './todo.reducers.js';
+import todoStore from './todo.store.js';
+
+export const handleTodoAdd = todoStore.createDispatcher(addTodo); // equivalent at (todo) =>  todoStore.dispatch(addTodo, todo);
+```
+
+_todo.addInput.container.jsx_
+```js
+import { handleAddTodo } from './todo.dispatchers.js';
+
+export default function AddInput(){
+ return <input type='text' onBlur={(e) => handleAddTodo(e.target.value)};
+}
+```
+
+{% endmethod %}
+
+{% method %}
+
+## `createDispatchers(mapReducers:Object<key,reducer>):Object<key, dispatcher>`
+
+`createDispatchers` is more like a built-in helper to reduce repetitive code around `createDispatcher`.
+
+
+{% common %}
+###Example
+_todo.reducers.js_
+
+```js
+import {createTodo} from './todo.utils.js';
+
+export function addTodo(state, todo){
+ return {
+  ...state, // We don't mutate the state. We create a copy.
+  todos: state.todos.concat(createTodo(todo))
+ }
+}
+
+export function ...
+
+```
+
+_todo.addInput.container.jsx_
+```js
+import todoStore from './todo.store.js';
+import * as todoReducers from './todo.reducers.js';
+
+const { addTodo: handleAddTodo } = todoStore.createDispatchers(todoReducers);
+
+export default function AddInput(){
+ return <input type='text' onBlur={(e) => handleAddTodo(e.target.value)};
+}
+```
+
+{% endmethod %}
+
+
+
+
+
+
+
 
