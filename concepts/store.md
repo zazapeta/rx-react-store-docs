@@ -28,13 +28,17 @@ _App.container.jsx_
 ```js
 import appStore from './app.store.js';
 
+function setTitle(state, title){
+  retun {...state, title}
+}
+
 function App({title}){
   return (
     <div>
       <h1>{title}</h1>
       <input 
         type='text'
-        onChange={(e) => appStore.dispatch((state) => ({...state, title:e.target.value})}
+        onChange={(e) => appStore.dispatch(setTitle, e.target.value)}
       />
     </div>
   );
