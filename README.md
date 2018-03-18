@@ -91,12 +91,5 @@ export default appStore.connect()(App);
 ```
 
 _AnOther.container.jsx_
-
-
 ```js
-
-
-
-
-```js
-
+```
