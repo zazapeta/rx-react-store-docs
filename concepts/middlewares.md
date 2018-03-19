@@ -25,3 +25,34 @@ So we ends-up with this liste of middlewares (executed in this order) :
  * AfterGlobalSequential
  * AfterLocalSequential
 
+  
+<div style="border:1px solid black; margin:4px; font-size:14px;"> **Middlewares are instances of `Map`.** </div>
+
+## Example 
+```js
+import RxStore from '@zazapeta/rx-react-store';
+
+const initialState = {
+  title: 'Super App',
+  version: 1,
+};
+
+const ns = 'App';
+
+let appStore = new RxStore({ ns, initialState });
+appStore.BeforeGlobalParallel.set('Perf', (state, action) =>
+  console.time(`${action.name}`)
+);
+
+appStore.AfterGlobalParallel.set('Perf', (state, action) =>
+  console.timeEnd(`${action.name}`)
+);
+
+appStore.AfterGlobalParallel.set('InfoLogger', (state, action) =>
+  console.info(`[${action.name}] STATE:`, state),
+);
+
+export default appStore;
+```
+
+
