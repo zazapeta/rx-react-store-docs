@@ -10,9 +10,9 @@
 ## Concepts
 
 * [Reducer](concepts/reducer.md)
-* [Dispatchers](concepts/actiondispatcher.md)
+* [Dispatcher](concepts/actiondispatcher.md)
 * [Store](concepts/store.md)
-* [Middlewares](concepts/middlewares.md)
+* [Middleware](concepts/middlewares.md)
 
 ## API
 
