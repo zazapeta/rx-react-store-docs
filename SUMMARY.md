@@ -32,3 +32,7 @@
 
 * [TodoApp](https://github.com/zazapeta/rx-react-store/tree/master/rx-react-store-example-todo)
 
+## GitHub
+
+* [Repo](https://github.com/zazapeta/rx-react-store)
+
