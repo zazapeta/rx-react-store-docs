@@ -19,14 +19,14 @@ So we ends-up with this liste of middlewares (executed in this order) :
  * BeforeGlobalSequential
  * BeforeLocalSequential
 
- <span style="color:red; border:1px solid black; margin:2px;"> DISPATCH </span>
+ <span style="color:red; border:1px solid red; margin:2px; border-radius:5px;"> <strong>DISPATCH</strong> </span>
  * AfterGlobalParallel
  * AfterLocalParallel
  * AfterGlobalSequential
  * AfterLocalSequential
 
   
-<div style="border:1px solid black; margin:4px; font-size:14px;"><strong>Middlewares are instances of  <code>Map</code>.</strong></div>
+<span style="border:1px solid black; margin:4px; font-size:14px;"><strong>Middlewares are instances of  <code>Map</code>.</strong></span>
 
 ## Example 
 ```js
