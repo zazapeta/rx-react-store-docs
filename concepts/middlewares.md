@@ -19,7 +19,7 @@ So we ends-up with this liste of middlewares (executed in this order) :
  * BeforeGlobalSequential
  * BeforeLocalSequential
 
- <span style="color:red; border:1px solid black"> DISPATCH </span>
+ <span style="color:red; border:1px solid black;"> DISPATCH </span>
  * AfterGlobalParallel
  * AfterLocalParallel
  * AfterGlobalSequential
