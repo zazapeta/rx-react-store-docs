@@ -22,11 +22,11 @@
   * [createDispatcher](methods.md#createDispatcher)
   * [createDispatchers](methods.md#createDispatchers)
   * [connect](methods.md#connect)
-* [middlewares lifecycle](middlewares-lifecycle.md)
 * [Attributes](attributes.md)
   * [\[get\] state](attributes/read-only-state.md)
   * [\[get\] subject](attributes/get-subject.md)
   * [\[get\] namespace](attributes/get-namespace.md)
+* [Middleware](concepts/middlewares.md)
 
 ## Examples
 

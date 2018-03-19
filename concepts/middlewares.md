@@ -1,4 +1,4 @@
-## Middleware 
+## Middleware {#lifecycle} 
 Middleware is a function that will be executed in a specific moment, for a specific scope, for a specific mode.
 
 We have 2 moments of execution : 
