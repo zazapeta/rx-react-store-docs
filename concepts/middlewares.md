@@ -26,7 +26,7 @@ So we ends-up with this liste of middlewares (executed in this order) :
  * AfterLocalSequential
 
   
-<div style="border:1px solid black; margin:4px; font-size:14px;"> **Middlewares are instances of `Map`.** </div>
+<div style="border:1px solid black; margin:4px; font-size:14px;"><strong>Middlewares are instances of  <code>Map</code>.</strong></div>
 
 ## Example 
 ```js
