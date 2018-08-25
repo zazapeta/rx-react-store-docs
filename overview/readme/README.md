@@ -1,4 +1,4 @@
-# RxJS + ReactJS
+# Getting started
 
 The basic implementation of rx-react-store is simple. However, to make the most of it, it's recommended to have basic knowledge on:
 

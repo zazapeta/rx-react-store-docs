@@ -1,1 +1,0 @@
-Return the state of the store

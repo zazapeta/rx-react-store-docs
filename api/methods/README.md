@@ -1,10 +1,8 @@
-#Methodes
+# Methodes
 
-{% method %}
-## constructor({ns:String, intialState:Object}) {#constructor}
+## constructor\({ns:String, intialState:Object}\) {#constructor}
 
-
-```js
+```javascript
   /**
    * Create an RxStore instance
    * @param {Object} opts
@@ -14,14 +12,13 @@
    * @returns {RxStore} A new RxStore instance
    */
    constructor({ ns = 'rxStore', initialState = {} } = {})
- ```
+```
 
-{% common %}
-###Example
+### Example
 
 _todo.store.js_
 
-```js
+```javascript
 import RxStore from '@zazapeta/rx-react-store';
 
 const ns = 'Todo';
@@ -34,14 +31,9 @@ const todoStore = new RxStore({ ns, initialState });
 export default todoStore;
 ```
 
-{% endmethod %}
+## _async_ dispatch\(reducer:Function, ...rest\) {#dispatch}
 
----
-
-{% method %}
-## _async_ dispatch(reducer:Function, ...rest) {#dispatch}
-
-```js
+```javascript
   /**
    * Async Method
    * Dispatch a reducer thought the store. This the unique manner to modify the store.
@@ -51,13 +43,12 @@ export default todoStore;
    */
    async dispatch(reducer = (state) => state, ...rest)
 ```
-{% common %}
 
-Define dispatchers in a dedicated file.
-Just import `todoStore` and have access to the `dispatch` method to update all connected component.
+Define dispatchers in a dedicated file. Just import `todoStore` and have access to the `dispatch` method to update all connected component.
 
 _todo.dispatchers.js_
-```js
+
+```javascript
 import todoStore from './todo.store.js';
 
 export async function handleRemoveTodo(todo){
@@ -67,28 +58,22 @@ export async function handleRemoveTodo(todo){
   }));
 }
 ```
-{% endmethod %}
 
----
-
-{% method %}
-## createDispatcher(reducer:Function): Function {#createDispatcher}
+## createDispatcher\(reducer:Function\): Function {#createDispatcher}
 
 `RxStore` provide `createDispatcher` method **to avoid repetitive code**.
 
-
-```js
+```javascript
   createDispatcher(reducer) {
     return (...args) => this.dispatch(reducer, ...args);
   }
 ```
 
-{% common %}
-
 Define `reducers` in a dedicated file.
 
 _todo.reducers.js_
-```js
+
+```javascript
 export function addTodo(state, todo){
   return {
     ...state,
@@ -98,7 +83,8 @@ export function addTodo(state, todo){
 ```
 
 _todo.container.jsx_
-```js
+
+```javascript
 import todoStore from './todo.store.js';
 import { addTodo } from './todo.reducers.js';
 let handleAddTodo = todoStore.createDispatcher(addTodo);
@@ -113,16 +99,11 @@ function handleTodo(todo){
 onClick={() => handleAddTodo(todo)}
 ```
 
-{% endmethod %}
-
----
-
-{% method %}
-## createDispatchers(reducersMap:Object{String,Function}):Object{String, Function} {#createDispatchers}
+## createDispatchers\(reducersMap:Object{String,Function}\):Object{String, Function} {#createDispatchers}
 
 `RxStore` provide `createDispatchers` method **to avoid repetitive code**.
 
-```js
+```javascript
   createDispatchers(reducers = {}) {
     let dispatchers = {};
     Object.keys(reducers).forEach(
@@ -133,12 +114,11 @@ onClick={() => handleAddTodo(todo)}
   }
 ```
 
-{% common %}
-
 Define `reducers` in a dedicated file.
 
 _todo.reducers.js_
-```js
+
+```javascript
 export function addTodo(state, todo){
   return {
     ...state,
@@ -148,7 +128,8 @@ export function addTodo(state, todo){
 ```
 
 _todo.container.jsx_
-```js
+
+```javascript
 import todoStore from './todo.store.js';
 import * as reducers from './todo.reducers.js';
 let dispatchers = todoStore.createDispatchers(reducers);
@@ -156,25 +137,17 @@ let dispatchers = todoStore.createDispatchers(reducers);
 ...
 
 onClick={() => dispatchers.addTodo(todo)}
-
 ```
 
-{% endmethod %}
+## connect\(mapStateToProps:Function\(state, props\)-&gt;Object\)\(BaseComponent:Component\):Component {#connect}
 
----
+`connect` is a High Order Component \(react-redux.connect\). It's create a component that listen for changes comming from the given store.
 
-{% method %}
-## connect(mapStateToProps:Function(state, props)->Object)(BaseComponent:Component):Component {#connect}
+> TIPS: To integrate RxStore with another view library, you may override `connect`
 
-`connect` is a High Order Component (react-redux.connect).
-It's create a component that listen for changes comming from the given store.
-
->TIPS: To integrate RxStore with another view library, you may override `connect`
-
-
-{% common %}
 _todo.container.jsx_
-```js
+
+```javascript
 import todoStore from './todo.store.js';
 
 function TodoContainer({todos}){
@@ -190,10 +163,4 @@ function mapStateToProps({ todos }, props) {
 
 export default todoStore.connect(mapStateToProps)(TodoContainer);
 ```
-
-{% endmethod %}
-
-
-
-
 

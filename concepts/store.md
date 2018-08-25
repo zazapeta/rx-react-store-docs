@@ -1,11 +1,15 @@
-The Store is a simple Class with a very basic API to be used: 
- * dispatch(reducer, ...args)
- * connect
- 
+# Store
+
+The Store is a simple Class with a very basic API to be used:
+
+* dispatch\(reducer, ...args\)
+* connect
+
 ## Example
 
 _app.store.js_
-```js
+
+```javascript
 import RxStore from '@zazapeta/rx-react-store';
 
 const initialState = {
@@ -25,7 +29,8 @@ export default appStore;
 ```
 
 _App.container.jsx_
-```js
+
+```javascript
 import appStore from './app.store.js';
 
 function setTitle(state, title){
@@ -45,5 +50,5 @@ function App({title}){
 }
 
 export default appStore.connect()(App);
-
 ```
+

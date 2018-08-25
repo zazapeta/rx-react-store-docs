@@ -1,27 +1,21 @@
 # Dispatcher
 
+Dispatcher are  **async functions**  that receive a [reducer](https://github.com/zazapeta/rx-react-store-docs/tree/a9d88d16c10c8bf43148794a0fb8dd0b5d981655/concepts/concepts/reducer.md) and, in addition some arguments that will be passed to the reducer. This the one way to modify the store. Like `react.setState` `dispatch` is async. Use `await` keyword to make things after a dispatch. There is 2 ways to `dispatch`:
 
-Dispatcher are ** async functions ** that receive a [reducer](concepts/reducer.md) and, in addition some arguments that will be passed to the reducer. This the one way to modify the store.
-Like `react.setState` `dispatch` is async. Use `await` keyword to make things after a dispatch.
-There is 2 ways to `dispatch`:
- * Using the [`dispatch`](methods.md#dispatch) method direclty
- * Calling a dispatcher created by [`createDispatcher`](methods.md#createDispatcher) or [`createDispatchers`](methods.md#createDispatchers)
- 
-Dispatching will trigger [middlewares](middlewares-lifecycle.md) and will rerender all ** connected components** that are wrapped by the [`connect`](methods.md#connect) HOC of a same RxStore instance (think singleton).
+* Using the [`dispatch`](https://github.com/zazapeta/rx-react-store-docs/tree/a9d88d16c10c8bf43148794a0fb8dd0b5d981655/concepts/methods.md#dispatch) method direclty
+* Calling a dispatcher created by [`createDispatcher`](https://github.com/zazapeta/rx-react-store-docs/tree/a9d88d16c10c8bf43148794a0fb8dd0b5d981655/concepts/methods.md#createDispatcher) or [`createDispatchers`](https://github.com/zazapeta/rx-react-store-docs/tree/a9d88d16c10c8bf43148794a0fb8dd0b5d981655/concepts/methods.md#createDispatchers)
 
-{% method %}
+Dispatching will trigger [middlewares](https://github.com/zazapeta/rx-react-store-docs/tree/a9d88d16c10c8bf43148794a0fb8dd0b5d981655/concepts/middlewares-lifecycle.md) and will rerender all  **connected components** that are wrapped by the [`connect`](https://github.com/zazapeta/rx-react-store-docs/tree/a9d88d16c10c8bf43148794a0fb8dd0b5d981655/concepts/methods.md#connect) HOC of a same RxStore instance \(think singleton\).
 
 ## _async_ `dispatch(reducer)`
 
-Using `dispatch` method directly. Be aware with this method. It can generate a lot of boilerplate code. To reduce it, see [`createDispatchers`](methods.md#createDispatchers)
+Using `dispatch` method directly. Be aware with this method. It can generate a lot of boilerplate code. To reduce it, see [`createDispatchers`](https://github.com/zazapeta/rx-react-store-docs/tree/a9d88d16c10c8bf43148794a0fb8dd0b5d981655/concepts/methods.md#createDispatchers)
 
-
-{% common %}
-###Example
+### Example
 
 _todo.reducers.js_
 
-```js
+```javascript
 import {createTodo} from './todo.utils.js';
 
 export function addTodo(state, todo){
@@ -30,11 +24,11 @@ export function addTodo(state, todo){
   todos: state.todos.concat(createTodo(todo))
  }
 }
-
 ```
 
 _todo.addInput.container.jsx_
-```js
+
+```javascript
 import { addTodo } from './todo.reducers.js';
 import todoStore from './todo.store.js';
 
@@ -43,20 +37,15 @@ export default function AddInput(){
 }
 ```
 
-{% endmethod %}
-
-{% method %}
-
 ## `createDispatcher(reducer, ...rest)`
 
 `createDispatcher` is more like a built-in helper to reduce repetitive code around `dispatch`;
 
+### Example
 
-{% common %}
-###Example
 _todo.reducers.js_
 
-```js
+```javascript
 import {createTodo} from './todo.utils.js';
 
 export function addTodo(state, todo){
@@ -65,11 +54,11 @@ export function addTodo(state, todo){
   todos: state.todos.concat(createTodo(todo))
  }
 }
-
 ```
 
 _todo.dispatchers.js_
-```js
+
+```javascript
 import { addTodo } from './todo.reducers.js';
 import todoStore from './todo.store.js';
 
@@ -77,7 +66,8 @@ export const handleTodoAdd = todoStore.createDispatcher(addTodo); // equivalent 
 ```
 
 _todo.addInput.container.jsx_
-```js
+
+```javascript
 import { handleAddTodo } from './todo.dispatchers.js';
 
 export default function AddInput(){
@@ -85,20 +75,15 @@ export default function AddInput(){
 }
 ```
 
-{% endmethod %}
-
-{% method %}
-
 ## `createDispatchers(mapReducers:Object<key,reducer>):Object<key, dispatcher>`
 
 `createDispatchers` is more like a built-in helper to reduce repetitive code around `createDispatcher`.
 
+### Example
 
-{% common %}
-###Example
 _todo.reducers.js_
 
-```js
+```javascript
 import {createTodo} from './todo.utils.js';
 
 export function addTodo(state, todo){
@@ -109,11 +94,11 @@ export function addTodo(state, todo){
 }
 
 export function ...
-
 ```
 
 _todo.addInput.container.jsx_
-```js
+
+```javascript
 import todoStore from './todo.store.js';
 import * as todoReducers from './todo.reducers.js';
 
@@ -123,13 +108,4 @@ export default function AddInput(){
  return <input type='text' onBlur={(e) => handleAddTodo(e.target.value)};
 }
 ```
-
-{% endmethod %}
-
-
-
-
-
-
-
 

@@ -1,11 +1,13 @@
-# Summary
+# Table of contents
+
+* [RxJS + ReactJS](README.md)
 
 ## Overview
 
-* [Getting started](README.md)
-  * [Data flow](README.md#data-flow)
-  * [Installation](README.md#install)
-  * [Starting guide](README.md#start)
+* [Getting started](overview/readme/README.md)
+  * [Data flow](overview/readme/data-flow.md)
+  * [Installation](overview/readme/installation.md)
+  * [Starting guide](overview/readme/starting-guide.md)
 
 ## Concepts
 
@@ -16,17 +18,17 @@
 
 ## API
 
-* [Methodes](methods.md)
-  * [constructor](methods.md#constructor)
-  * [dispatch](methods.md#dispatch)
-  * [createDispatcher](methods.md#createDispatcher)
-  * [createDispatchers](methods.md#createDispatchers)
-  * [connect](methods.md#connect)
-* [Attributes](attributes.md)
-  * [\[get\] state](attributes/read-only-state.md)
-  * [\[get\] subject](attributes/get-subject.md)
-  * [\[get\] namespace](attributes/get-namespace.md)
-* [Middleware](concepts/middlewares.md)
+* [Methodes](api/methods/README.md)
+  * [constructor](api/methods/constructor.md)
+  * [dispatch](api/methods/dispatch.md)
+  * [createDispatcher](api/methods/createdispatcher.md)
+  * [createDispatchers](api/methods/createdispatchers.md)
+  * [connect](api/methods/connect.md)
+* [Attributes](api/attributes/README.md)
+  * [\[get\] state](api/attributes/read-only-state.md)
+  * [\[get\] subject](api/attributes/get-subject.md)
+  * [\[get\] namespace](api/attributes/get-namespace.md)
+* [Middleware](api/middlewares.md)
 
 ## Examples
 
